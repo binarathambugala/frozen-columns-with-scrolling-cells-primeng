@@ -5,8 +5,6 @@
 /* PrimeNg style overriding */
 
 body .ui-table .ui-table-tbody > tr > td {
-    background-color: inherit;
-    border: 1px solid #c8c8c8;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
