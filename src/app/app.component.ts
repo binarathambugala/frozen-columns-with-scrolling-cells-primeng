@@ -1,10 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
-export class AppComponent  {
-  name = 'Angular';
+export class AppComponent implements OnInit {
+  cars5: any[];
+
+  frozenCols: any[];
+
+  scrollableCols: any[];
+
+  ngOnInit() {
+    this.scrollableCols = [
+      { field: "category", header: "Category" },
+      { field: "difficultyLevel", header: "Difficulty Level" },
+      { field: "timePosed", header: "Time Posed" }
+    ];
+
+    this.frozenCols = [{ field: "question", header: "Question" }];
+
+    this.cars5 = [
+      {
+        question:
+          "How does Angular 4 improved error handling, when an error is caused by something in a template?",
+        category: "Angular",
+        difficultyLevel: "Easy",
+        timePosed: "10"
+      },
+      {
+        question:
+          "What is MVC?",
+        category: "Architectures",
+        difficultyLevel: "Easy",
+        timePosed: "10"
+      },
+      {
+        question:
+          "We can subscribe to an observable using the . . . . . . . . The benefit of this is that Angular deals with your subscription during the lifecycle of a component. Angular will automatically subscribe and unsubscribe for you.",
+        category: "RxJS",
+        difficultyLevel: "Difficult",
+        timePosed: "10"
+      }
+    ];
+  }
 }
