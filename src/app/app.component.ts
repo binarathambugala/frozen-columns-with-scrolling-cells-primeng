@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.scrollableColsForQuestionsStats = [
-      { field: "question", header: "Question" },
       { field: "category", header: "Category" },
       { field: "difficultyLevel", header: "Difficulty Level" },
       { field: "timePosed", header: "Time Posed" }
