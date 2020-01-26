@@ -1,14 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import {TableModule} from 'primeng/table';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
+import { TableModule } from "primeng/table";
+import { ButtonModule } from "primeng/button";
 
-import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { AppComponent } from "./app.component";
+import { HelloComponent } from "./hello.component";
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,TableModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule, TableModule, ButtonModule],
+  declarations: [AppComponent, HelloComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

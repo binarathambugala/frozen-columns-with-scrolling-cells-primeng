@@ -6,22 +6,23 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  cars5: any[];
+  questionStats: any[];
 
-  frozenCols: any[];
+  frozenColsForQuestionStats: any[];
 
-  scrollableCols: any[];
+  scrollableColsForQuestionsStats: any[];
 
   ngOnInit() {
-    this.scrollableCols = [
+    this.scrollableColsForQuestionsStats = [
+      { field: "question", header: "Question" },
       { field: "category", header: "Category" },
       { field: "difficultyLevel", header: "Difficulty Level" },
       { field: "timePosed", header: "Time Posed" }
     ];
 
-    this.frozenCols = [{ field: "question", header: "Question" }];
+    this.frozenColsForQuestionStats = [{ field: "question", header: "Question" }];
 
-    this.cars5 = [
+    this.questionStats = [
       {
         question:
           "How does Angular 4 improved error handling, when an error is caused by something in a template?",

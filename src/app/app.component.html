@@ -1,22 +1,32 @@
 <h3>Frozen Columns</h3>
-<p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [value]="cars5" [scrollable]="true" scrollHeight="200px" frozenWidth="300px">
-    <ng-template pTemplate="colgroup" let-columns>
-        <colgroup>
-            <col *ngFor="let col of columns" style="width:300px">
-        </colgroup>
-    </ng-template>
-    <ng-template pTemplate="header" let-columns>
-        <tr>
-            <th *ngFor="let col of columns">
-                {{col.header}}
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr>
-            <td *ngFor="let col of columns">
-                {{rowData[col.field]}}
-            </td>
-        </tr>
-    </ng-template>
+
+<p-table #dt dataKey="question" [columns]="scrollableColsForQuestionsStats" [frozenColumns]="frozenColsForQuestionStats"
+	frozenWidth="300px" [paginator]="true" [rows]="3" [value]="questionStats" [scrollable]="true">
+	<ng-template pTemplate="caption">
+		<div class="ui-helper-clearfix" style="text-align: left">
+			<button type="button" pButton icon="fa fa-file" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="margin-right: 0.5em;"></button>
+		</div>
+	</ng-template>
+	<ng-template pTemplate="colgroup" let-columns>
+		<colgroup>
+			<col *ngFor="let col of columns" style="width:300px" [pSortableColumn]="col.field">
+		</colgroup>
+	</ng-template>
+	<ng-template pTemplate="header" let-columns>
+		<tr>
+			<th *ngFor="let col of columns" [pSortableColumn]="col.field">
+				{{col.header}}
+				<p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+					ariaLabelDesc="Activate to sort in descending order"
+					ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+			</th>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="body" let-rowData let-columns="columns">
+		<tr>
+			<td *ngFor="let col of columns">
+				{{rowData[col.field]}}
+			</td>
+		</tr>
+	</ng-template>
 </p-table>
